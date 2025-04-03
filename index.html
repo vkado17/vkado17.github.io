@@ -1,14 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Coming Soon</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kadō</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-    h1 { font-size: 2em; color: #333; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1e1e1e);
+      color: #ffffff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      letter-spacing: -1px;
+    }
+
+    p.tagline {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #aaaaaa;
+      margin-bottom: 2rem;
+    }
+
+    .launch {
+      font-size: 1rem;
+      color: #888;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: 1px solid #333;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p.tagline {
+        font-size: 1.1rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>🚀 Something awesome is coming soon!</h1>
+  <div class="container">
+    <h1>Kadō</h1>
+    <p class="tagline">Where mindfulness meets ambition for a purpose-driven tomorrow.</p>
+    <div class="launch">Launching Soon</div>
+  </div>
 </body>
 </html>
