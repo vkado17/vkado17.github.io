@@ -86,4 +86,98 @@
       font-size: 26px;
       color: #111827;
       opacity: 0;
-      transform: translateY
+      transform: translateY(20px);
+      margin-bottom: 24px;
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .highlight-green {
+      color: #22C55E;
+      font-weight: 600;
+    }
+
+    /* CTA Button */
+    .cta-button {
+      margin-top: 50px;
+      background: #22C55E;
+      color: #ffffff;
+      padding: 18px 36px;
+      border-radius: 12px;
+      font-size: 20px;
+      font-weight: 600;
+      transition: background 0.3s;
+      display: inline-block;
+    }
+
+    .cta-button:hover {
+      background: #16A34A;
+    }
+
+    /* Subtext */
+    .subtext {
+      font-size: 16px;
+      color: #4B5563;
+      margin-top: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .beat-line {
+        font-size: 22px;
+      }
+      .logo {
+        height: 48px;
+      }
+      .pod-ambassadors-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<header>
+  <img src="KADO LOGO.png" alt="Kado Logo" class="logo">
+  <a href="#pod-ambassadors" class="pod-ambassadors-btn">Pod Ambassadors</a>
+</header>
+
+<!-- Main Content -->
+<main>
+  <div class="beats-container">
+    <div class="beat-line">12 weeks.</div>
+    <div class="beat-line">One pod. <span class="highlight-green">One mission.</span></div>
+    <div class="beat-line">Eight teammates, <span class="highlight-green">growing together</span>.</div>
+    <div class="beat-line">Daily <span class="highlight-green">momentum</span>.</div>
+    <div class="beat-line">Weekly <span class="highlight-green">power-ups</span>.</div>
+    <div class="beat-line">Wellness that <span class="highlight-green">fuels ambition</span>.</div>
+    <div class="beat-line"><span class="highlight-green">Kado Points</span> you earn. <span class="highlight-green">Mentorship you unlock</span>.</div>
+    <div class="beat-line">A future you build — with a <span class="highlight-green">circle that backs you</span>.</div>
+  </div>
+
+  <a href="#waitlist" class="cta-button">Join the Waitlist</a>
+
+  <div class="subtext">Get early access to Kadō. Start building your future.</div>
+</main>
+
+<script>
+  // Animate beats slowly
+  const beats = document.querySelectorAll('.beat-line');
+  let currentBeat = 0;
+
+  function animateBeats() {
+    if (currentBeat < beats.length) {
+      beats[currentBeat].style.opacity = 1;
+      beats[currentBeat].style.transform = 'translateY(0)';
+      currentBeat++;
+      setTimeout(animateBeats, 700); // 0.7s between lines
+    }
+  }
+
+  window.addEventListener('load', animateBeats);
+</script>
+
+</body>
+</html>
