@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kadō</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bellota:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Global */
     * {
@@ -15,13 +15,14 @@
     }
 
     body {
-      font-family: 'Poppins', 'Inter', sans-serif;
+      font-family: 'Bellota', 'Inter', sans-serif;
       background: #FFFFFF;
       color: #111827;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
+      overflow-x: hidden;
     }
 
     a {
@@ -32,16 +33,15 @@
     /* Nav Bar */
     header {
       width: 100%;
-      max-width: 1280px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 24px 40px;
+      background: #FFFFFF;
       position: fixed;
       top: 0;
       left: 0;
-      background: #FFFFFF;
-      z-index: 100;
+      z-index: 1000;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
@@ -52,9 +52,9 @@
     .pod-ambassadors-btn {
       padding: 12px 24px;
       background: #22C55E;
-      color: #FFFFFF;
+      color: #ffffff;
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 700;
       border-radius: 999px;
       transition: background 0.3s;
     }
@@ -71,53 +71,44 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 140px 20px 40px;
+      padding: 140px 20px 20px;
       margin-top: 80px;
       width: 100%;
       max-width: 1280px;
     }
 
     .beats-container {
-      margin-top: 20px;
+      margin-top: 0px;
       max-width: 900px;
     }
 
     .beat-line {
       font-size: 26px;
       color: #111827;
-      opacity: 0;
-      transform: translateY(20px);
       margin-bottom: 24px;
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .segment {
+      opacity: 0;
+      margin: 0 4px;
+      transition: opacity 0.8s ease;
     }
 
     .highlight-green {
       color: #22C55E;
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    /* CTA Button */
-    .cta-button {
-      margin-top: 50px;
-      background: #22C55E;
-      color: #ffffff;
-      padding: 18px 36px;
-      border-radius: 12px;
-      font-size: 20px;
-      font-weight: 600;
-      transition: background 0.3s;
-      display: inline-block;
-    }
-
-    .cta-button:hover {
-      background: #16A34A;
-    }
-
-    /* Subtext */
-    .subtext {
+    /* Footer Message */
+    .footer-message {
+      margin-top: 60px;
       font-size: 16px;
-      color: #4B5563;
-      margin-top: 12px;
+      color: #6B7280;
+      text-align: center;
+      opacity: 0.8;
     }
 
     /* Responsive */
@@ -126,7 +117,7 @@
         font-size: 22px;
       }
       .logo {
-        height: 48px;
+        height: 50px;
       }
       .pod-ambassadors-btn {
         font-size: 16px;
@@ -146,37 +137,58 @@
 
 <!-- Main Content -->
 <main>
-  <div class="beats-container">
-    <div class="beat-line">12 weeks.</div>
-    <div class="beat-line">One pod. <span class="highlight-green">One mission.</span></div>
-    <div class="beat-line">Eight teammates, <span class="highlight-green">growing together</span>.</div>
-    <div class="beat-line">Daily <span class="highlight-green">momentum</span>.</div>
-    <div class="beat-line">Weekly <span class="highlight-green">power-ups</span>.</div>
-    <div class="beat-line">Wellness that <span class="highlight-green">fuels ambition</span>.</div>
-    <div class="beat-line"><span class="highlight-green">Kado Points</span> you earn. <span class="highlight-green">Mentorship you unlock</span>.</div>
-    <div class="beat-line">A future you build — with a <span class="highlight-green">circle that backs you</span>.</div>
+  <div class="beats-container" id="beats">
+    <div class="beat-line">
+      <span class="segment">12 weeks.</span>
+    </div>
+    <div class="beat-line">
+      <span class="segment">One pod.</span>
+      <span class="segment highlight-green">One mission.</span>
+    </div>
+    <div class="beat-line">
+      <span class="segment">Eight teammates,</span>
+      <span class="segment highlight-green">growing together.</span>
+    </div>
+    <div class="beat-line">
+      <span class="segment">Daily</span>
+      <span class="segment highlight-green">momentum.</span>
+    </div>
+    <div class="beat-line">
+      <span class="segment">Weekly</span>
+      <span class="segment highlight-green">power-ups.</span>
+    </div>
+    <div class="beat-line">
+      <span class="segment">Wellness that</span>
+      <span class="segment highlight-green">fuels ambition.</span>
+    </div>
+    <div class="beat-line">
+      <span class="segment highlight-green">Kado Points</span>
+      <span class="segment">you earn.</span>
+      <span class="segment highlight-green">Mentorship you unlock.</span>
+    </div>
+    <div class="beat-line">
+      <span class="segment">A future you build — with a</span>
+      <span class="segment highlight-green">circle that backs you.</span>
+    </div>
   </div>
 
-  <a href="#waitlist" class="cta-button">Join the Waitlist</a>
-
-  <div class="subtext">Get early access to Kadō. Start building your future.</div>
+  <!-- Footer Message -->
+  <div class="footer-message">Currently in Closed Beta.</div>
 </main>
 
 <script>
-  // Animate beats slowly
-  const beats = document.querySelectorAll('.beat-line');
-  let currentBeat = 0;
+  const segments = document.querySelectorAll('.segment');
+  let currentSegment = 0;
 
-  function animateBeats() {
-    if (currentBeat < beats.length) {
-      beats[currentBeat].style.opacity = 1;
-      beats[currentBeat].style.transform = 'translateY(0)';
-      currentBeat++;
-      setTimeout(animateBeats, 700); // 0.7s between lines
+  function showNextSegment() {
+    if (currentSegment < segments.length) {
+      segments[currentSegment].style.opacity = 1;
+      currentSegment++;
+      setTimeout(showNextSegment, 500); // slower reveal for each piece
     }
   }
 
-  window.addEventListener('load', animateBeats);
+  window.addEventListener('load', showNextSegment);
 </script>
 
 </body>
