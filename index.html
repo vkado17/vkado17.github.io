@@ -21,6 +21,10 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
     }
 
     a {
@@ -28,63 +32,17 @@
       color: inherit;
     }
 
-    /* Top Navigation */
-    header {
-      width: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 32px 64px;
-      background: #FFFFFF;
-      z-index: 100;
-    }
-
+    /* Logo */
     .logo {
-      height: 40px;
+      max-width: 240px;
+      height: auto;
+      margin-bottom: 40px;
     }
 
-    .learn-more-btn {
-      padding: 10px 18px;
-      border: 2px solid #4F46E5;
-      border-radius: 8px;
-      background: transparent;
-      color: #4F46E5;
-      font-size: 18px;
-      font-weight: 600;
-      transition: 0.2s;
-    }
-
-    .learn-more-btn:hover {
-      border-color: #4338CA;
-      color: #4338CA;
-    }
-
-    /* Hero Content */
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 160px 20px 40px;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .headline {
-      font-size: 64px;
-      font-weight: 700;
-      letter-spacing: -1px;
-      margin-bottom: 32px;
-      color: #111827;
-    }
-
+    /* Beats Text */
     .beats-container {
       margin-top: 20px;
+      max-width: 900px;
     }
 
     .beat-line {
@@ -93,24 +51,19 @@
       opacity: 0;
       transform: translateY(20px);
       margin-bottom: 24px;
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
 
-    /* Highlight styles */
-    .highlight-color {
-      color: #4F46E5;
-    }
-
-    .highlight-bg {
-      background: #EEF2FF;
-      border-radius: 4px;
-      padding: 2px 6px;
+    /* Highlighted words */
+    .highlight-green {
+      color: #22C55E;
+      font-weight: 600;
     }
 
     /* CTA Button */
     .cta-button {
-      margin-top: 40px;
-      background: #4F46E5;
+      margin-top: 50px;
+      background: #22C55E;
       color: #ffffff;
       padding: 18px 36px;
       border-radius: 12px;
@@ -121,21 +74,18 @@
     }
 
     .cta-button:hover {
-      background: #4338CA;
+      background: #16A34A;
     }
 
     /* Subtext */
     .subtext {
       font-size: 16px;
-      color: #6B7280;
+      color: #4B5563;
       margin-top: 12px;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-      .headline {
-        font-size: 48px;
-      }
       .beat-line {
         font-size: 22px;
       }
@@ -145,31 +95,26 @@
 
 <body>
 
-<!-- Navigation -->
-<header>
-  <img src="Zenify (1).png" alt="Kado Logo" class="logo">
-  <a href="#learn" class="learn-more-btn">Learn More</a>
-</header>
+<!-- Logo -->
+<img src="Zenify (1).png" alt="Kado Logo" class="logo">
 
-<!-- Main Content -->
-<main>
-  <h1 class="headline">Kadō. Where wellness powers ambition.</h1>
+<!-- Animated Beats Section -->
+<div class="beats-container">
+  <div class="beat-line">12 weeks.</div>
+  <div class="beat-line">One pod. <span class="highlight-green">One mission.</span></div>
+  <div class="beat-line">Eight teammates, <span class="highlight-green">growing together</span>.</div>
+  <div class="beat-line">Daily <span class="highlight-green">momentum</span>.</div>
+  <div class="beat-line">Weekly <span class="highlight-green">power-ups</span>.</div>
+  <div class="beat-line">Wellness that <span class="highlight-green">fuels ambition</span>.</div>
+  <div class="beat-line"><span class="highlight-green">Kado Points</span> you earn. <span class="highlight-green">Mentorship you unlock</span>.</div>
+  <div class="beat-line">A future you build — with a <span class="highlight-green">circle that backs you</span>.</div>
+</div>
 
-  <div class="beats-container" id="beats">
-    <div class="beat-line">12 weeks.</div>
-    <div class="beat-line">One pod. <span class="highlight-color">One mission.</span></div>
-    <div class="beat-line">Eight teammates, <span class="highlight-bg">growing together</span>.</div>
-    <div class="beat-line">Daily <span class="highlight-color">momentum</span>.</div>
-    <div class="beat-line">Weekly <span class="highlight-bg">power-ups</span>.</div>
-    <div class="beat-line">Wellness that <span class="highlight-color">fuels ambition</span>.</div>
-    <div class="beat-line"><span class="highlight-bg">Kado Points</span> you earn. <span class="highlight-color">Mentorship you unlock</span>.</div>
-    <div class="beat-line">A future you build — with a <span class="highlight-bg">circle that backs you</span>.</div>
-  </div>
+<!-- Call to Action -->
+<a href="#waitlist" class="cta-button">Join the Waitlist</a>
 
-  <a href="#waitlist" class="cta-button">Join the Waitlist</a>
-
-  <div class="subtext">Get early access to Kadō. Start building your future.</div>
-</main>
+<!-- Subtext -->
+<div class="subtext">Get early access to Kadō. Start building your future.</div>
 
 <script>
   // Animate beats
@@ -181,7 +126,7 @@
       beats[currentBeat].style.opacity = 1;
       beats[currentBeat].style.transform = 'translateY(0)';
       currentBeat++;
-      setTimeout(animateBeats, 300); // 0.3s between each line
+      setTimeout(animateBeats, 700); // slower: 0.7s between lines
     }
   }
 
