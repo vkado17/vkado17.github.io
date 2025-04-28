@@ -68,22 +68,22 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       text-align: center;
-      padding: 140px 20px 20px;
+      padding: 100px 20px 20px;
       margin-top: 80px;
       width: 100%;
       max-width: 1280px;
     }
 
     .beats-container {
-      margin-top: 0px;
+      margin-top: 60px;
       max-width: 900px;
     }
 
     .beat-line {
-      font-size: 26px;
+      font-size: 32px;
       color: #111827;
       margin-bottom: 24px;
       display: flex;
@@ -93,7 +93,7 @@
 
     .segment {
       opacity: 0;
-      margin: 0 4px;
+      margin: 0 6px;
       transition: opacity 0.8s ease;
     }
 
@@ -102,19 +102,24 @@
       font-weight: 700;
     }
 
-    /* Footer Message */
-    .footer-message {
-      margin-top: 60px;
-      font-size: 16px;
+    /* Closed Beta Badge */
+    .closed-beta {
+      margin-top: 50px;
+      background: #F3F4F6;
       color: #6B7280;
-      text-align: center;
-      opacity: 0.8;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 999px;
+      display: inline-block;
+      opacity: 0.9;
+      margin-bottom: 40px;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
       .beat-line {
-        font-size: 22px;
+        font-size: 26px;
       }
       .logo {
         height: 50px;
@@ -172,11 +177,12 @@
     </div>
   </div>
 
-  <!-- Footer Message -->
-  <div class="footer-message">Currently in Closed Beta.</div>
+  <!-- Closed Beta Badge -->
+  <div class="closed-beta">Currently in Closed Beta</div>
 </main>
 
 <script>
+  // Animate each segment slowly
   const segments = document.querySelectorAll('.segment');
   let currentSegment = 0;
 
@@ -184,7 +190,7 @@
     if (currentSegment < segments.length) {
       segments[currentSegment].style.opacity = 1;
       currentSegment++;
-      setTimeout(showNextSegment, 500); // slower reveal for each piece
+      setTimeout(showNextSegment, 500); // nice rhythm
     }
   }
 
