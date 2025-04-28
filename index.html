@@ -4,108 +4,269 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kadō</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    /* Global Styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
+
     body {
-      font-family: 'Inter', sans-serif;
-      background: #f9fdf9;
-      color: #222;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      font-family: 'Poppins', 'Inter', sans-serif;
+      background: #FFFFFF;
+      color: #111827;
+      line-height: 1.5;
     }
-    header {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background: white;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 100;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    }
-    header img {
-      height: 40px;
-    }
-    .button {
-      padding: 10px 20px;
-      border: 2px solid #2ecc71;
-      background: transparent;
-      color: #2ecc71;
+
+    a {
       text-decoration: none;
-      font-weight: 600;
-      border-radius: 999px;
-      transition: background 0.3s, color 0.3s;
+      color: inherit;
     }
-    .button:hover {
-      background: #2ecc71;
-      color: white;
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
-    main {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 100px 20px 40px;
+
+    /* Hero Section */
+    .hero {
+      background: #ffffff;
       text-align: center;
-      flex-direction: column;
+      padding: 120px 20px 100px;
     }
-    .line {
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 22px;
+      font-weight: 400;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      color: #4B5563;
+    }
+
+    .hero .cta-button {
+      background: #4F46E5;
+      color: #ffffff;
+      padding: 14px 30px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 600;
+      transition: background 0.3s;
+      display: inline-block;
+    }
+
+    .hero .cta-button:hover {
+      background: #4338CA;
+    }
+
+    /* Short Beats Section */
+    .beats {
+      background: #FAFAFA;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .beat-line {
+      font-size: 30px;
+      color: #111827;
+      margin-bottom: 32px;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      max-width: 800px;
     }
-    .highlight {
-      color: #2ecc71;
+
+    /* Features Section */
+    .features {
+      background: #ffffff;
+      padding: 100px 20px;
+    }
+
+    .features h2 {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 60px;
+    }
+
+    .feature-grid {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .feature-item {
+      flex: 1 1 300px;
+      max-width: 320px;
+      text-align: center;
+    }
+
+    .feature-item span {
+      font-size: 40px;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .feature-item h3 {
+      font-size: 22px;
       font-weight: 600;
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    .feature-item p {
+      font-size: 18px;
+      color: #4B5563;
+    }
+
+    /* Visual Section */
+    .visual {
+      background: #EEF2FF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 100px 20px;
+    }
+
+    .visual-text {
+      flex: 1 1 400px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .visual-text h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .visual-text .cta-button {
+      margin-top: 20px;
+    }
+
+    .visual-image {
+      flex: 1 1 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .visual-image img {
+      max-width: 300px;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      background: #ffffff;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .final-cta h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .final-cta p {
+      font-size: 22px;
+      color: #4B5563;
+      margin-bottom: 40px;
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <img src="Zenify (1).png" alt="Kado Logo">
-  <a href="YOUR-ONE-PAGER-LINK.html" class="button">Learn More</a>
-</header>
+<!-- Hero Section -->
+<section class="hero container">
+  <h1>Kadō: Wellness in action. Careers in motion.</h1>
+  <p>Earn wellness points. Unlock mentorship, career boosters, and real opportunities — all inside a community built for your growth.</p>
+  <a href="#waitlist" class="cta-button">Join the Waitlist</a>
+</section>
 
-<main id="content">
-  <div class="line">12 weeks.</div>
-  <div class="line">One pod, one mission.</div>
-  <div class="line">Eight teammates pushing forward.</div>
-  <div class="line">Daily check-ins.</div>
-  <div class="line">Weekly boosts.</div>
-  <div class="line">Wellness that drives <span class="highlight">real growth</span>.</div>
-  <div class="line">Points you earn — rewards you unlock.</div>
-  <div class="line"><span class="highlight">Careers you launch</span>.</div>
-  <div class="line"><span class="highlight">Futures you own</span>.</div>
-  <div class="line"><strong>Kadō.</strong> Where wellness meets ambition.</div>
-</main>
+<!-- Short Beats Section -->
+<section class="beats container" id="beats">
+  <div class="beat-line">12 weeks.</div>
+  <div class="beat-line">One pod. One mission.</div>
+  <div class="beat-line">Eight teammates, growing together.</div>
+  <div class="beat-line">Daily check-ins.</div>
+  <div class="beat-line">Weekly power-ups.</div>
+  <div class="beat-line">Wellness that fuels ambition.</div>
+  <div class="beat-line">Kado Points: Earn them. Spend them. Level up.</div>
+  <div class="beat-line">Mentorship. Career guidance. Real opportunities.</div>
+  <div class="beat-line">A future you build — with a circle that backs you.</div>
+  <div class="beat-line">Kado. Where growth meets opportunity.</div>
+</section>
+
+<!-- Features Section -->
+<section class="features container">
+  <h2>Why Join Kado?</h2>
+  <div class="feature-grid">
+    <div class="feature-item">
+      <span>🎯</span>
+      <h3>Guided Wellness Journey</h3>
+      <p>Daily prompts, weekly boosts, and real practices that power your mind and ambition.</p>
+    </div>
+    <div class="feature-item">
+      <span>🤝</span>
+      <h3>Mentorship and Career Access</h3>
+      <p>Use Kado Points to unlock real mentors, career guides, and exclusive boosters.</p>
+    </div>
+    <div class="feature-item">
+      <span>🚀</span>
+      <h3>Grow With Your Pod</h3>
+      <p>Join a handpicked circle of teammates to stay accountable, grow together, and launch forward.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Visual Section -->
+<section class="visual container">
+  <div class="visual-text">
+    <h2>Your journey starts with one check-in.<br>Your future starts here.</h2>
+    <a href="#waitlist" class="cta-button">Join the Waitlist</a>
+  </div>
+  <div class="visual-image">
+    <img src="Zenify (1).png" alt="Kado Community">
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta container" id="waitlist">
+  <h2>Ready to build your future with Kadō?</h2>
+  <p>Join a pod. Earn your points. Unlock your future.</p>
+  <a href="#beats" class="cta-button">Join the Waitlist</a>
+</section>
 
 <script>
-  const lines = document.querySelectorAll('.line');
-  let index = 0;
+  // Animate beats
+  const beatLines = document.querySelectorAll('.beat-line');
+  let beatIndex = 0;
 
-  function showNextLine() {
-    if (index < lines.length) {
-      lines[index].style.opacity = 1;
-      lines[index].style.transform = 'translateY(0)';
-      index++;
-      setTimeout(showNextLine, 800); // 0.8 second delay between lines
+  function showNextBeat() {
+    if (beatIndex < beatLines.length) {
+      beatLines[beatIndex].style.opacity = 1;
+      beatLines[beatIndex].style.transform = 'translateY(0)';
+      beatIndex++;
+      setTimeout(showNextBeat, 300); // 0.3s delay
     }
   }
 
-  window.addEventListener('load', showNextLine);
+  window.addEventListener('load', showNextBeat);
 </script>
 
 </body>
