@@ -1,75 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kadō</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #0f0f0f, #1e1e1e);
-      color: #ffffff;
-      height: 100vh;
+      background: #f9fdf9;
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+    header img {
+      height: 40px;
+    }
+    .button {
+      padding: 10px 20px;
+      border: 2px solid #2ecc71;
+      background: transparent;
+      color: #2ecc71;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 999px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .button:hover {
+      background: #2ecc71;
+      color: white;
+    }
+    main {
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 100px 20px 40px;
       text-align: center;
-      padding: 20px;
+      flex-direction: column;
     }
-
-    .container {
+    .line {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
       max-width: 800px;
     }
-
-    h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      color: #ffffff;
-      letter-spacing: -1px;
-    }
-
-    p.tagline {
-      font-size: 1.4rem;
-      font-weight: 400;
-      color: #aaaaaa;
-      margin-bottom: 2rem;
-    }
-
-    .launch {
-      font-size: 1rem;
-      color: #888;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      border: 1px solid #333;
-      padding: 0.6rem 1.2rem;
-      border-radius: 999px;
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      p.tagline {
-        font-size: 1.1rem;
-      }
+    .highlight {
+      color: #2ecc71;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Kadō</h1>
-    <p class="tagline">Where mindfulness meets ambition for a purpose-driven tomorrow.</p>
-    <div class="launch">Launching Soon</div>
-  </div>
+
+<header>
+  <img src="Zenify (1).png" alt="Kado Logo">
+  <a href="YOUR-ONE-PAGER-LINK.html" class="button">Learn More</a>
+</header>
+
+<main id="content">
+  <div class="line">12 weeks.</div>
+  <div class="line">One pod, one mission.</div>
+  <div class="line">Eight teammates pushing forward.</div>
+  <div class="line">Daily check-ins.</div>
+  <div class="line">Weekly boosts.</div>
+  <div class="line">Wellness that drives <span class="highlight">real growth</span>.</div>
+  <div class="line">Points you earn — rewards you unlock.</div>
+  <div class="line"><span class="highlight">Careers you launch</span>.</div>
+  <div class="line"><span class="highlight">Futures you own</span>.</div>
+  <div class="line"><strong>Kadō.</strong> Where wellness meets ambition.</div>
+</main>
+
+<script>
+  const lines = document.querySelectorAll('.line');
+  let index = 0;
+
+  function showNextLine() {
+    if (index < lines.length) {
+      lines[index].style.opacity = 1;
+      lines[index].style.transform = 'translateY(0)';
+      index++;
+      setTimeout(showNextLine, 800); // 0.8 second delay between lines
+    }
+  }
+
+  window.addEventListener('load', showNextLine);
+</script>
+
 </body>
 </html>
