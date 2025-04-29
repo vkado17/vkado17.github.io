@@ -118,19 +118,19 @@
 
     .background-circle {
       position: absolute;
-      top: 80px;
+      top: 100px;
       width: 750px;
       height: 750px;
       background: url('Zenify (3).png') no-repeat center center;
       background-size: contain;
-      opacity: 0.09;
-      animation: zoom 30s infinite alternate ease-in-out;
+      opacity: 0.13; /* more alive */
+      animation: zoom 20s infinite alternate ease-in-out; /* faster zoom animation */
       z-index: 0;
     }
 
     @keyframes zoom {
       0% { transform: scale(1); }
-      100% { transform: scale(1.05); }
+      100% { transform: scale(1.08); }
     }
 
     .beats-container {
@@ -195,6 +195,7 @@
       .background-circle {
         width: 400px;
         height: 400px;
+        top: 140px; /* pushed lower on mobile */
       }
       .logo {
         height: 50px;
@@ -208,6 +209,9 @@
       }
       .show-mobile {
         display: flex;
+      }
+      .closed-beta {
+        margin-top: 20px; /* tighten spacing above Pods Forming Soon */
       }
     }
 
@@ -229,14 +233,8 @@
     }
 
     @keyframes badgeFadeScale {
-      0% {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
@@ -306,7 +304,7 @@
       <span class="segment">A future you build.</span>
     </div>
     <div class="beat-line show-mobile">
-      <span class="segment highlight-green">A circle that lifts you.</span>
+      <span class="segment highlight-green">With a circle that lifts you.</span>
     </div>
   </div>
 
