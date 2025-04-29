@@ -298,7 +298,7 @@
     <!-- Future Line -->
     <div class="beat-line show-desktop">
       <span class="segment">A future you build — with a</span>
-      <span class="segment highlight-green bold">circle that lifts you.</span>
+      <span class="segment highlight-green">circle that lifts you.</span>
     </div>
     <div class="beat-line show-mobile">
       <span class="segment highlight-green">With a circle that lifts you.</span>
@@ -309,15 +309,19 @@
   <div class="closed-beta">Pods Forming Soon 🔒</div>
 </main>
 
+<!-- Corrected Animation Script -->
 <script>
-  // Loading Screen and Beats
   window.addEventListener('load', () => {
     setTimeout(() => {
       document.getElementById('loading-screen').style.opacity = '0';
       setTimeout(() => {
         document.getElementById('loading-screen').style.display = 'none';
 
-        const segments = document.querySelectorAll('.segment');
+        // Only animate visible segments
+        const segments = Array.from(document.querySelectorAll('.segment')).filter(seg => {
+          return window.getComputedStyle(seg.parentElement).display !== 'none';
+        });
+
         let currentSegment = 0;
         function showNextSegment() {
           if (currentSegment < segments.length) {
