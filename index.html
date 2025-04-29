@@ -123,8 +123,8 @@
       height: 750px;
       background: url('Zenify (3).png') no-repeat center center;
       background-size: contain;
-      opacity: 0.13; /* more alive */
-      animation: zoom 20s infinite alternate ease-in-out; /* faster zoom animation */
+      opacity: 0.13;
+      animation: zoom 20s infinite alternate ease-in-out;
       z-index: 0;
     }
 
@@ -195,7 +195,7 @@
       .background-circle {
         width: 400px;
         height: 400px;
-        top: 140px; /* pushed lower on mobile */
+        top: 140px;
       }
       .logo {
         height: 50px;
@@ -211,7 +211,7 @@
         display: flex;
       }
       .closed-beta {
-        margin-top: 20px; /* tighten spacing above Pods Forming Soon */
+        margin-top: 20px;
       }
     }
 
@@ -249,7 +249,7 @@
 
 <!-- Nav Bar -->
 <header>
-  <img src="KADO LOGO.png" alt="Kado Logo" class="logo">
+  <img src="Zenify (1).png" alt="Kado Logo" class="logo">
   <a href="#pod-ambassadors" class="pod-ambassadors-btn">Pod Ambassadors</a>
 </header>
 
@@ -292,16 +292,13 @@
       <span class="segment highlight-green">Zen Points you earn.</span>
     </div>
     <div class="beat-line show-mobile">
-      <span class="segment highlight-green">Doors you unlock.</span>
+      <span class="segment">For doors you unlock.</span> <!-- black text, no highlight -->
     </div>
 
     <!-- Future Line -->
     <div class="beat-line show-desktop">
       <span class="segment">A future you build — with a</span>
       <span class="segment highlight-green">circle that lifts you.</span>
-    </div>
-    <div class="beat-line show-mobile">
-      <span class="segment">A future you build.</span>
     </div>
     <div class="beat-line show-mobile">
       <span class="segment highlight-green">With a circle that lifts you.</span>
@@ -320,7 +317,6 @@
       setTimeout(() => {
         document.getElementById('loading-screen').style.display = 'none';
 
-        // Animate beats after loading screen is gone
         const segments = document.querySelectorAll('.segment');
         let currentSegment = 0;
         function showNextSegment() {
