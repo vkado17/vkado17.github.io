@@ -123,14 +123,23 @@
       height: 750px;
       background: url('Zenify (3).png') no-repeat center center;
       background-size: contain;
-      opacity: 0.13;
-      animation: zoom 20s infinite alternate ease-in-out;
+      animation: zoom 8s ease-in-out infinite;
       z-index: 0;
     }
 
     @keyframes zoom {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.08); }
+      0% {
+        transform: scale(0.97);
+        opacity: 0.12;
+      }
+      50% {
+        transform: scale(1.03);
+        opacity: 0.15;
+      }
+      100% {
+        transform: scale(0.97);
+        opacity: 0.12;
+      }
     }
 
     .beats-container {
@@ -292,7 +301,7 @@
       <span class="segment highlight-green">Zen Points you earn.</span>
     </div>
     <div class="beat-line show-mobile">
-      <span class="segment">For doors you unlock.</span> <!-- black text, no highlight -->
+      <span class="segment">For doors you unlock.</span>
     </div>
 
     <!-- Future Line -->
@@ -309,7 +318,6 @@
   <div class="closed-beta">Pods Forming Soon 🔒</div>
 </main>
 
-<!-- Corrected Animation Script -->
 <script>
   window.addEventListener('load', () => {
     setTimeout(() => {
@@ -317,7 +325,6 @@
       setTimeout(() => {
         document.getElementById('loading-screen').style.display = 'none';
 
-        // Only animate visible segments
         const segments = Array.from(document.querySelectorAll('.segment')).filter(seg => {
           return window.getComputedStyle(seg.parentElement).display !== 'none';
         });
