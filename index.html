@@ -22,6 +22,11 @@
       overflow: hidden;
     }
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
     /* Loading Screen */
     #loading-screen {
       position: fixed;
@@ -77,6 +82,11 @@
       border-radius: 999px;
       transition: background 0.3s, transform 0.3s;
       animation: pulseColor 3.5s infinite, pulseScale 3.5s infinite;
+      text-decoration: none; /* REMOVE underline */
+    }
+
+    .pod-ambassadors-btn:hover {
+      text-decoration: none;
     }
 
     @keyframes pulseColor {
@@ -91,17 +101,17 @@
 
     /* Main Section */
     main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      text-align: center;
-      padding-top: 120px;
+      min-height: 100vh;
       width: 100%;
       max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       position: relative;
-      overflow: hidden;
+      padding-top: 120px;
     }
 
     .background-circle {
@@ -219,7 +229,7 @@
 <!-- Loading Screen -->
 <div id="loading-screen">
   <h1>Kadō</h1>
-  <p>Building your pod...</p>
+  <p>Building your wellness experience...</p>
 </div>
 
 <!-- Nav Bar -->
@@ -250,7 +260,7 @@
     </div>
     <div class="beat-line">
       <span class="segment">Weekly</span>
-      <span class="segment highlight-green">power-ups.</span>
+      <span class="segment highlight-green">power-ups ⚡️</span>
     </div>
     <div class="beat-line">
       <span class="segment">Rise to the top. 🏆</span>
@@ -276,26 +286,27 @@
 </main>
 
 <script>
-  // Loading Screen
+  // Loading Screen and Beats
   window.addEventListener('load', () => {
     setTimeout(() => {
       document.getElementById('loading-screen').style.opacity = '0';
       setTimeout(() => {
         document.getElementById('loading-screen').style.display = 'none';
+
+        // Animate beats after loading screen is gone
+        const segments = document.querySelectorAll('.segment');
+        let currentSegment = 0;
+        function showNextSegment() {
+          if (currentSegment < segments.length) {
+            segments[currentSegment].style.opacity = 1;
+            currentSegment++;
+            setTimeout(showNextSegment, 550);
+          }
+        }
+        showNextSegment();
+
       }, 1000);
     }, 1500);
-
-    // Animate beats
-    const segments = document.querySelectorAll('.segment');
-    let currentSegment = 0;
-    function showNextSegment() {
-      if (currentSegment < segments.length) {
-        segments[currentSegment].style.opacity = 1;
-        currentSegment++;
-        setTimeout(showNextSegment, 550);
-      }
-    }
-    showNextSegment();
   });
 </script>
 
