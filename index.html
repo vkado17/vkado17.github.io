@@ -50,7 +50,7 @@
       height: 60px;
     }
 
-    .pod-ambassadors-btn {
+    .enter-btn {
       padding: 12px 24px;
       background: #22C55E;
       color: #ffffff;
@@ -87,7 +87,7 @@
 
     .background-circle {
       position: absolute;
-      top: 60px;
+      top: 120px; /* Pushed down by 50px */
       width: 750px;
       height: 750px;
       background: url('Zenify (3).png') no-repeat center center;
@@ -103,13 +103,23 @@
     }
 
     .beats-container {
-      margin-top: 40px;
+      margin-top: 80px;
       max-width: 800px;
       z-index: 1;
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 2s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .beat-line {
@@ -164,7 +174,7 @@
       .logo {
         height: 50px;
       }
-      .pod-ambassadors-btn {
+      .enter-btn {
         font-size: 16px;
         padding: 10px 20px;
       }
@@ -177,7 +187,7 @@
 <!-- Nav Bar -->
 <header>
   <img src="KADO LOGO.png" alt="Kado Logo" class="logo">
-  <a href="#pod-ambassadors" class="pod-ambassadors-btn">Pod Ambassadors</a>
+  <a href="#enter" class="enter-btn">Enter Kadō</a>
 </header>
 
 <!-- Main Content -->
@@ -231,7 +241,7 @@
     if (currentSegment < segments.length) {
       segments[currentSegment].style.opacity = 1;
       currentSegment++;
-      setTimeout(showNextSegment, 500);
+      setTimeout(showNextSegment, 550); // Smooth wave timing
     }
   }
 
