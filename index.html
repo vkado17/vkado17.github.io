@@ -58,7 +58,7 @@
       font-weight: 700;
       border-radius: 999px;
       transition: background 0.3s, transform 0.3s;
-      animation: pulseColor 2.5s infinite, pulseScale 2.5s infinite;
+      animation: pulseColor 3.5s infinite, pulseScale 3.5s infinite;
     }
 
     @keyframes pulseColor {
@@ -92,8 +92,8 @@
       height: 750px;
       background: url('Zenify (3).png') no-repeat center center;
       background-size: contain;
-      opacity: 0.07;
-      animation: zoom 20s infinite alternate ease-in-out;
+      opacity: 0.09;
+      animation: zoom 30s infinite alternate ease-in-out;
       z-index: 0;
     }
 
@@ -129,6 +129,11 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      transition: transform 0.3s ease;
+    }
+
+    .beat-line:hover {
+      transform: translateY(-2px);
     }
 
     .segment {
@@ -156,7 +161,7 @@
       opacity: 0;
       z-index: 1;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      animation: badgeFadeScale 2s ease 5s forwards;
+      animation: badgeFadeScale 2s ease 6s forwards;
     }
 
     @keyframes badgeFadeScale {
@@ -227,7 +232,7 @@
       <span class="segment highlight-green">fuels ambition.</span>
     </div>
     <div class="beat-line">
-      <span class="segment highlight-green">Zen Points</span>
+      <span class="segment highlight-green">Kado Points</span>
       <span class="segment">you earn.</span>
       <span class="segment highlight-green">Mentorship you unlock.</span>
     </div>
