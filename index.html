@@ -50,7 +50,7 @@
       height: 60px;
     }
 
-    .enter-btn {
+    .pod-ambassadors-btn {
       padding: 12px 24px;
       background: #22C55E;
       color: #ffffff;
@@ -87,7 +87,7 @@
 
     .background-circle {
       position: absolute;
-      top: 120px; /* Pushed down by 50px */
+      top: 120px;
       width: 750px;
       height: 750px;
       background: url('Zenify (3).png') no-repeat center center;
@@ -145,8 +145,8 @@
     /* Closed Beta Badge */
     .closed-beta {
       margin-top: 40px;
-      background: #F3F4F6;
-      color: #6B7280;
+      background: #ECFDF5;
+      color: #22C55E;
       font-size: 16px;
       font-weight: 600;
       padding: 10px 20px;
@@ -154,12 +154,18 @@
       display: inline-block;
       opacity: 0.9;
       z-index: 1;
-      animation: fadeIn 2s ease 5s forwards;
+      animation: pulseBadge 3s infinite alternate, fadeIn 2s ease 5s forwards;
       opacity: 0;
     }
 
     @keyframes fadeIn {
       to { opacity: 0.9; }
+    }
+
+    @keyframes pulseBadge {
+      0% { background-color: #ECFDF5; }
+      50% { background-color: #D1FAE5; }
+      100% { background-color: #ECFDF5; }
     }
 
     /* Responsive */
@@ -174,7 +180,7 @@
       .logo {
         height: 50px;
       }
-      .enter-btn {
+      .pod-ambassadors-btn {
         font-size: 16px;
         padding: 10px 20px;
       }
@@ -187,7 +193,7 @@
 <!-- Nav Bar -->
 <header>
   <img src="KADO LOGO.png" alt="Kado Logo" class="logo">
-  <a href="#enter" class="enter-btn">Enter Kadō</a>
+  <a href="#pod-ambassadors" class="pod-ambassadors-btn">Pod Ambassadors</a>
 </header>
 
 <!-- Main Content -->
@@ -229,8 +235,8 @@
     </div>
   </div>
 
-  <!-- Closed Beta Badge -->
-  <div class="closed-beta">Currently in Closed Beta</div>
+  <!-- Final Badge -->
+  <div class="closed-beta">Pods Forming Soon 🔒</div>
 </main>
 
 <script>
@@ -241,7 +247,7 @@
     if (currentSegment < segments.length) {
       segments[currentSegment].style.opacity = 1;
       currentSegment++;
-      setTimeout(showNextSegment, 550); // Smooth wave timing
+      setTimeout(showNextSegment, 550);
     }
   }
 
